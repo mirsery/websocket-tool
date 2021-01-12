@@ -1,0 +1,10 @@
+{
+    "name": "websocket-util",
+    "version": "0.1.0",
+    "author": "mirsery",
+    "description": "websocket 测试小工具",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron ."
+    }
+}

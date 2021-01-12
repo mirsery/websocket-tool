@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+   <meta charset="utf-8">
+   <title>websocket开发调试工具</title>
+   <link rel="stylesheet" type="text/css" href="css/common.css">
+   
+   <script type="text/javascript">   
+      if ("WebSocket" in window)
+      {
+         console.log("欢迎使用 WebSocket 测试工具\n1、连接 connect(url) url-example: ws://xxx.xxx \n2、发送数据 send(msg) \n3、断开连接 disconnect()")
+
+         window.connect = function(url){
+            
+            window.ws = new WebSocket(url)
+
+            window.ws.onopen = function()
+            {
+               console.log("已经连接上服务器")
+            };
+             
+            window.ws.onmessage = function (evt) 
+            { 
+               var received_msg = evt.data;
+               if(received_msg == undefined)
+                  return;
+               console.log("[receive] " + received_msg);
+            };
+             
+            window.ws.onclose = function()
+            { 
+               console.log("disconnect the server")
+            };
+            
+            window.send = function(msg){
+               window.ws.send(msg);
+            }
+
+            window.disconnect = function(){
+               window.ws.close();
+            }
+         }
+
+      }
+      else {
+         console.log("您的浏览器不支持 WebSocket!");
+      }
+   </script>
+   </head>
+   <body> 
+       <h1 class="cus_title"> websocket 开发测试工具</h1>
+   </body>
+</html>
