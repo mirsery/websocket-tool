@@ -1,6 +1,6 @@
 body {
     background-color: rgb(30, 33, 40);
-    color: whitesmoke;
+    color: ghostwhite;
 }
 
 
@@ -12,13 +12,15 @@ body {
 .message_window {
     border: 0;
     background: rgb(87, 23, 55);
-    color: aliceblue;
+    color: ghostwhite;
     width: 90%;
     font-size: large;
     margin-left: 5%;
     min-height: 300px;
     height: 60vh;
     overflow: auto;
+    resize: none;
+    text-align: left;
 }
 
 .row_item {
@@ -28,11 +30,13 @@ body {
 .content_title {
     margin-left: 5%;
     vertical-align: middle;
+    font-size: larger;
 }
 
 .content_window {
     height: 5vh;
     width: 50%;
+    resize: none;
 }
 
 .content_btn {
