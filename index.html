@@ -9,17 +9,17 @@
 <h1 class="cus_title"> websocket 开发测试工具</h1>
 
 <div class="row_item">
-    <textarea class="message_window" readonly disabled></textarea>
+    <textarea id="msg_show" class="message_window" readonly disabled></textarea>
 </div>
 
 <div class="row_item">
     <form>
         <span class="content_title">服务器地址 :</span>
-        <input class="content_btn" style="min-width: 400px;">
+        <input id="server_address" class="content_btn" style="min-width: 400px;">
         <span class="content_btn">协议 :</span>
         <input class="content_btn" name="protocol" type="radio" checked="true">ws
         <input class="content_btn" name="protocol" type="radio">wss
-        <button class="content_btn" style="min-width: 60px;">连接</button>
+        <button id="con_btn" class="content_btn" style="min-width: 60px;">连接</button>
         <button class="content_btn" style="min-width: 60px;">清屏</button>
     </form>
 </div>
@@ -29,5 +29,6 @@
     <button class="content_btn" style="min-width: 60px;">发送</button>
 </div>
 
+<script src="render.js"></script>
 </body>
 </html>
