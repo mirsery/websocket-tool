@@ -6,10 +6,33 @@ window.electronAPI.updateWindow((_event, value) => {
     msgShow.innerHTML = msgShow.value + value;
 })
 
-document.getElementById("con_btn")
-    .addEventListener('click', () => {
-            let url = document.getElementById("server_address").value;
-            console.log(url)
-            const result = window.electronAPI.connect(url)
-        }
-    )
+//
+
+
+let conBtn = document.getElementById("con_btn");
+let serverAddressInput = document.getElementById("server_address");
+
+serverAddressInput.onkeydown = (e) => {
+    if (e.keyCode === 13) {
+        conBtn.click();
+        return false;
+    }
+}
+
+conBtn.addEventListener('click', async () => {
+        let url = serverAddressInput.value;
+        return await window.electronAPI.connect(url)
+    }
+)
+
+
+/**
+ * Forbidden refresh
+ * **/
+window.onkeydown = (e) => {
+    let ev = window.event || e;
+    let code = ev.keyCode || ev.which;
+    if (code === 82 && (ev.metaKey || ev.ctrlKey)) {
+        return false
+    }
+}

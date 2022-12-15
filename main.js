@@ -5,7 +5,7 @@ function createWindow() {
 
     ipcMain.handle('ws:connect', async (event,url) => {
         console.log(url)
-        return url;
+        // return url;
     })
 
     const win = new BrowserWindow({
